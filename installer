@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Borrowed from the lein downloader
+HTTP_CLIENT=${HTTP_CLIENT:-"wget -O"}
+if type -p curl >/dev/null 2>&1; then
+    if [ "$https_proxy" != "" ]; then
+        CURL_PROXY="-x $https_proxy"
+    fi
+    HTTP_CLIENT="curl $CURL_PROXY -f -k -L -o"
+fi
+
+$HTTP_CLIENT ~/bin/cyberbrain https://raw.github.com/sebastiansen/cyberbrain/master/cyberbrain.py
+
+echo PROMPT_COMMAND='/Users/sebastianrojas/PycharmProjects/cyberbrain/cyberbrain.py $(history | tail -1 | cut -c 8-)' >> ~/.bashrc
+
+source ~/.bashrc

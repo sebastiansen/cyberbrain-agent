@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-# Add this line to your .bashrc
-# PROMPT_COMMAND='/path/to/cyberbrain.py $(history | tail -1 | cut -c 8-)'
-
 import sys
 import httplib
 import platform
