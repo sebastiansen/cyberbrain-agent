@@ -9,8 +9,8 @@ if type -p curl >/dev/null 2>&1; then
     HTTP_CLIENT="curl $CURL_PROXY -f -k -L -o"
 fi
 
-$HTTP_CLIENT ~/bin/cyberbrain https://raw.github.com/sebastiansen/cyberbrain/master/cyberbrain.py
+$HTTP_CLIENT ~/bin/cyberbrain https://raw.githubusercontent.com/sebastiansen/cyberbrain-agent/master/cyberbrain.py
 
-echo PROMPT_COMMAND='/Users/sebastianrojas/PycharmProjects/cyberbrain/cyberbrain.py $(history | tail -1 | cut -c 8-)' >> ~/.bashrc
+echo PROMPT_COMMAND=~/bin/cyberbrain $(history | tail -1 | cut -c 8-)' >> ~/.bashrc
 
 source ~/.bashrc
